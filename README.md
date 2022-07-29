@@ -2,6 +2,8 @@
 
 This repository contains the documents, discussions and implementations of the SDK specification for Dapr.
 
+[WIP Spec](spec/spec.md)
+
 ## Contact
 
 If you have a general question or suggestion regarding the work done in this special interest group, please open a GitHub issue in this repository.
