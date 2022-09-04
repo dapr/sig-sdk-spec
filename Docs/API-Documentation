@@ -20,7 +20,7 @@ Describes the various features of the SDK and how to use them.These instructions
 
 ## Code Samples
 
-Contains code examples and other types of examples to help accelerate your development of applications that work with SDK. The examples show how to perform specific tasks for [Dapr]  services using various programming languages and supported technologies.
+Contains code examples and other types of examples to help accelerate your development of applications that work with SDK. The examples show how to perform specific tasks for [DAPR] services using various programming languages and supported technologies.
 
 [GitHub-Sync](https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github)
 [HackMD-it](https://hackmd.io/c/tutorials/%2Fs%2Fhackmd-it)
@@ -41,11 +41,11 @@ alert(s):
 - UML diagrams
 
 ```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-Note left of Alice: Alice responds
-Alice->Bob: Where have you been?
+A->B: Sending Request?
+Note right of B: 200
+B-->A: TokenID
+Note left of A: 200
+A->B: Auth-ID
 ```
 
 ## Client Implementation
