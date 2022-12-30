@@ -7,7 +7,7 @@
 * Method Name: `getConfiguration`
 * Input Type: `GetConfigurationRequest`
 * Output Type: `GetConfigurationResponse`
-* Since: `1.0`
+* Since: `1.5`
 
 #### GetConfigurationRequest
 | Name | Type | Required | Default Value | Description |
@@ -21,12 +21,12 @@
 
 #### GetConfigurationResponse
 | Name | Type | Description |
-|-----------|------|----------|---------------|-------------|
+|-----------|------|-------------|
 | `items` | map of `string` to `configurationItem` | It is the response containing the list of configuration items against respective keys. |
 
 #### ConfigurationItem
 | Name | Type | Description |
-|-----------|------|----------|---------------|-------------|
+|-----------|------|-------------|
 | `value` | `string` | The value of configuration item. |
 | `version` | `string` | The version of configuration item. |
 | `metadata` | map of `string` to `string` | The metadata which will be passed to/from configuration store component. |
@@ -50,7 +50,7 @@ None.
 * Method Name: `subscribeConfiguration`
 * Input Type: `SubscribeConfigurationRequest`
 * Output Type: `SubscribeConfigurationResponse`
-* Since: `1.0`
+* Since: `1.5`
 
 #### SubscribeConfigurationRequest
 | Name | Type | Required | Default Value | Description |
@@ -64,13 +64,13 @@ None.
 
 #### SubscribeConfigurationResponse
 | Name | Type | Description |
-|-----------|------|----------|---------------|-------------|
+|-----------|------|-------------|
 | `id` | `string` | It is the id corresponding to this subscription, can be used to stop this subscription. |
 | `items` | map of `string` to `configurationItem` | It is the response containing the list of updated configuration items. |
 
 #### ConfigurationItem
 | Name | Type | Description |
-|-----------|------|----------|---------------|-------------|
+|-----------|------|-------------|
 | `value` | `string` | The value of configuration item. |
 | `version` | `string` | The version of configuration item. |
 | `metadata` | map of `string` to `string` | The metadata which will be passed to/from configuration store component. |
@@ -100,7 +100,7 @@ None.
 * Method Name: `unsubscribeConfiguration`
 * Input Type: `UnsubscribeConfigurationRequest`
 * Output Type: `UnsubscribeConfigurationResponse`
-* Since: `1.0`
+* Since: `1.7`
 
 #### UnsubscribeConfigurationRequest
 | Name | Type | Required | Default Value | Description |
@@ -110,7 +110,7 @@ None.
 
 #### UnsubscribeConfigurationResponse
 | Name | Type | Description |
-|-----------|------|----------|---------------|-------------|
+|-----------|------|-------------|
 | `ok` | `bool` | Represents whether this unsubscription was successful or not. |
 | `message` | `string` | Message giving information about the reason of failure, if any. |
 
