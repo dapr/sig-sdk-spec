@@ -63,7 +63,7 @@ None.
 
 #### gRPC Considerations
 
-If the `BulkMessage`'s `event` is a `Buffer`, the content-type should be `application/octet-stream`.
+None.
 
 ## References
 
