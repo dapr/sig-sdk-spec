@@ -49,7 +49,7 @@ None.
 
 * Method Name: `subscribeConfiguration`
 * Input Type: `SubscribeConfigurationRequest`
-* Output Type: `SubscribeConfigurationResponse`
+* Output Type: `SubscribeConfigurationStream`
 * Since: `1.5`
 
 #### SubscribeConfigurationRequest
@@ -58,15 +58,20 @@ None.
 | `storeName` | `string` | Y | | The name of configuration store. |
 | `keys` | array of `string` | N | `null` | The key of the configuration item to subscribe. |
 | `metadata` | map of `string` to `string` | N | `null` | The metadata which can be sent to configuration store components. |
+| `callback` | user defined func / handler | N | | Callback for every incoming event. |
 
 * If a list of keys is provided, only subscribe for the corresponding configuration items. 
 * Empty list of keys means subscribing to all configuration items for this storeName.
 
-#### SubscribeConfigurationResponse
+#### SubscribeConfigurationStream
 | Name | Type | Description |
 |-----------|------|-------------|
 | `id` | `string` | It is the id corresponding to this subscription, can be used to stop this subscription. |
-| `items` | map of `string` to `configurationItem` | It is the response containing the list of updated configuration items. |
+| `items` | map of `string` to `configurationItem` | It is the response containing the list of updated configuration items. Instead of asking for a handler, sdk can decide to supply back events on this stream and let user process them. |
+
+`SubscribeConfigurationStream` can just return once and an `id` contained in it, as id can be later used by App to unsubscribe. OR `SubscribeConfigurationStream` can be a stream of items / events.
+
+`SubscribeConfigurationStream` can also optionally provide a function `stop` to let App call it when willing to unsubscribe.
 
 #### ConfigurationItem
 | Name | Type | Description |
@@ -87,7 +92,7 @@ None.
 
 #### HTTP Considerations
 
-None.
+A separate handler may need to be implemented, depending on sdk implementation. This handler, if required, would be responsible to process events received at `/configuration/{configStore}/{key}`.
 
 #### gRPC Considerations
 
