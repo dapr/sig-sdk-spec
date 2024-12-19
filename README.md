@@ -1,3 +1,5 @@
+***This repo has archived as discussed and approved in this STC issue https://github.com/dapr/community/issues/444***
+
 # Dapr SDK Specification
 
 This repository contains the documents, discussions and implementations of the SDK specification for Dapr.
